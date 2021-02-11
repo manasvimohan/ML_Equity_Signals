@@ -139,14 +139,6 @@ x_variables = list\
         )
 choice_column_name = y_choice_variables[0]
 data = data.dropna()
-# print('--------------------------------------------------------')
-# print('Modelling for {} frequency signals'.format(frequency))
-# print('Dependent and Independent variables details')
-# print('Check X_Variables: {}'.format(x_variables))
-# print('Check Y_Variable: {}'.format(y_choice_variables))
-# print('Data Shape: {}'.format(data.shape))
-# print('X_Variables: {}'.format(x_variables))
-# print('Y_Variable: {}'.format(choice_column_name))
 # END ###### Some Data Cleaning #######
 
 # START ###### Converting x and y to numpy arrays #######
@@ -169,34 +161,6 @@ custom_functions.count_y(y, 2)
 # scaler = StandardScaler().fit(x)
 # x = scaler.transform(x)
 # END ###### Scaling x #######
-
-#
-# # START ###### Tackling imbalance data befor train test split (NOT RECOMMENDED) #######
-# print('--------------------------------------------------------')
-# balancing_required = input("Do you wish to balance out the training data (yes/no) : ").lower()
-#
-# if balancing_required == 'yes':
-#     choice = input("Do you wish to random undersample (u), random oversample (o) or SMOTE (SMOTE): ").lower()
-#     x, y, choice = custom_functions.sample_data(x, y, choice)
-#     balancing_done = balancing_required
-#     print('Using balanced data')
-#     print('Final count of categories (y) after sampling')
-#     custom_functions.count_y(y, 0)
-#     custom_functions.count_y(y, 1)
-#     custom_functions.count_y(y, 2)
-#
-# elif balancing_required == 'no':
-#     choice = 'none'
-#     balancing_done = 'no'
-#     print('Using unbalanced data')
-#     print('Final count of categories (y)')
-#     custom_functions.count_y(y, 0)
-#     custom_functions.count_y(y, 1)
-#     custom_functions.count_y(y, 2)
-# else:
-#     print('Invalid balance requirement given')
-#
-# #########################################################
 
 # Split into train/test
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=9)
@@ -233,7 +197,6 @@ else:
     print('Invalid balance requirement given')
 
 #########################################################
-
 
 ##########################################################
 # # Standard Scaler
